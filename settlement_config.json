@@ -1,0 +1,206 @@
+{
+  "labour_rate_per_hour": {
+    "car": 600,
+    "suv": 650,
+    "bike": 350,
+    "scooter": 350,
+    "default": 500
+  },
+  "severity": {
+    "minor": {
+      "repair_material_fraction": 0.12,
+      "labour_mult": 0.5
+    },
+    "moderate": {
+      "repair_material_fraction": 0.3,
+      "labour_mult": 0.85
+    },
+    "severe": {
+      "repair_material_fraction": 0.55,
+      "labour_mult": 1.2
+    }
+  },
+  "damage_type_mult": {
+    "scratch": 0.6,
+    "dent": 1.0,
+    "crack": 1.2,
+    "broken": 1.4
+  },
+  "repair_cap_vs_replace": 0.85,
+  "replace_labour_mult": 0.8,
+  "depreciation": {
+    "metal": [
+      [
+        6,
+        0.0
+      ],
+      [
+        12,
+        0.05
+      ],
+      [
+        24,
+        0.15
+      ],
+      [
+        36,
+        0.25
+      ],
+      [
+        48,
+        0.35
+      ],
+      [
+        60,
+        0.45
+      ],
+      [
+        100000,
+        0.5
+      ]
+    ],
+    "plastic": 0.5,
+    "rubber": 0.5,
+    "fibre": 0.3,
+    "glass": 0.0
+  },
+  "zero_dep_addon_removes_depreciation": true,
+  "idv_age_schedule": [
+    [
+      6,
+      0.05
+    ],
+    [
+      12,
+      0.15
+    ],
+    [
+      24,
+      0.2
+    ],
+    [
+      36,
+      0.3
+    ],
+    [
+      48,
+      0.4
+    ],
+    [
+      60,
+      0.5
+    ],
+    [
+      100000,
+      0.6
+    ]
+  ],
+  "default_idv_new": {
+    "car": {
+      "economy": 500000,
+      "mid": 900000,
+      "premium": 2000000
+    },
+    "suv": {
+      "economy": 800000,
+      "mid": 1400000,
+      "premium": 3000000
+    },
+    "bike": {
+      "economy": 90000,
+      "mid": 180000,
+      "premium": 400000
+    },
+    "scooter": {
+      "economy": 80000,
+      "mid": 120000,
+      "premium": 200000
+    }
+  },
+  "default_excess": {
+    "car": 1000,
+    "suv": 1000,
+    "bike": 100,
+    "scooter": 100,
+    "default": 1000
+  },
+  "default_excluded_parts": [
+    "tyre"
+  ],
+  "make_aliases": {
+    "maruti": "maruti suzuki",
+    "suzuki": "suzuki",
+    "mercedes": "mercedes-benz",
+    "benz": "mercedes-benz",
+    "vw": "volkswagen",
+    "re": "royal enfield",
+    "enfield": "royal enfield",
+    "mg motor": "mg"
+  },
+  "settlement": {
+    "floor_pct": 0.75,
+    "ceiling_pct": 0.9,
+    "ceiling_hard_max": 0.95,
+    "floor_hard_min": 0.5,
+    "min_saving_pct": 0.07,
+    "step_pct": 0.04,
+    "step_decay": 0.75,
+    "min_step_inr": 100,
+    "max_rounds": 4,
+    "accept_gap_pct": 0.04,
+    "settle_at_customer_figure_if_lower": false,
+    "round_down_to": 10,
+    "max_messages": 16,
+    "age_bands": [
+      {
+        "max_age_months": 24,
+        "floor_delta": 0.03,
+        "ceiling_delta": 0.03,
+        "label": "newer vehicle (up to 2 years)"
+      },
+      {
+        "max_age_months": 60,
+        "floor_delta": 0.0,
+        "ceiling_delta": 0.0,
+        "label": "mid-age vehicle (2-5 years)"
+      },
+      {
+        "max_age_months": 120,
+        "floor_delta": -0.03,
+        "ceiling_delta": -0.05,
+        "label": "older vehicle (5-10 years)"
+      },
+      {
+        "max_age_months": 100000,
+        "floor_delta": -0.06,
+        "ceiling_delta": -0.1,
+        "label": "old vehicle (over 10 years)"
+      }
+    ],
+    "history": {
+      "per_claim_12m_penalty": 0.02,
+      "max_penalty": 0.08,
+      "clean_36m_bonus": 0.02
+    }
+  },
+  "profit": {
+    "max_loss_ratio": 0.85,
+    "premium_years": 3
+  },
+  "human": {
+    "auto_settle_cap_inr": 25000,
+    "approval_above_inr": 15000,
+    "min_ai_confidence": 70,
+    "severe_to_human": true,
+    "structural_to_human": true,
+    "max_claims_12m_auto": 3,
+    "repeat_part_days": 180,
+    "total_loss_ratio_of_idv": 0.75,
+    "hyper_inflation_factor": 1.25,
+    "hyper_min_abs_gap_inr": 1500,
+    "audit_sample_rate": 0.1,
+    "unstable_extra_parts": 2,
+    "fallback_pricing_to_human": true,
+    "override_requires_note": true
+  }
+}
